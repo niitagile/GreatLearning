@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Entity
 @Table(name = "roles")
-@Data
+
 public class Role {
     @Id
     @Column(name = "role_id")

@@ -14,8 +14,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name="book")
-@Getter
-@Setter
+
 public class Book {
 
 	// define fields
@@ -24,8 +23,6 @@ public class Book {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
-	
-	
 	
 	
 	@Column(name="name")

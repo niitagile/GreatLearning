@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Entity
 @Table(name = "users")
-@Data
+
 public class User {
 
    @Id
@@ -62,6 +62,11 @@ public List<Role> getRoles() {
 
 public void setRoles(List<Role> roles) {
 	this.roles = roles;
+}
+
+@Override
+public String toString() {
+	return "User [id=" + id + ", username=" + username + ", password=" + password + ", roles=" + roles + "]";
 }
 
    

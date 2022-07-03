@@ -1,5 +1,7 @@
 package com.greatLearning.libraryManagement.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,8 +19,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	    @Override
 	    public UserDetails loadUserByUsername(String username)
 	            throws UsernameNotFoundException {
+	    	List<User>users=userRepository.findAll();
+	    	System.out.println(users);
 	        User user = userRepository.getUserByUsername(username);
-	         
+	         System.out.println(user);
 	        if (user == null) {
 	            throw new UsernameNotFoundException("Could not find user");
 	        }
