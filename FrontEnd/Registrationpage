@@ -1,0 +1,23 @@
+<html>
+<body>
+    <form action="" method="get/post">
+Enter your name::<input type="text" name="" id="" placeholder="">
+<input type="button" onclick="">
+<input type="submit">
+
+<select multiple>
+<option>India</option>
+
+</select>
+
+
+    </form>
+
+    <input type="radio" name="r1"> male
+    <input type="radio" name="r1">female
+
+    <input type="checkbox" name="c1">
+    <input type="checkbox" name="c2">
+</body>
+
+</html>
