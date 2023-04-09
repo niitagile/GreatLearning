@@ -621,11 +621,9 @@ function decrementItem(){
         decObj.price= currPrice*decObj.quantity;
     }
     else{
-        document.getElementById(decObj.id).classList.remove('toggle-heart')
         cartData.splice(ind,1);
+        document.getElementById(decObj.id).classList.remove('toggle-heart')
         document.getElementById('cart-plus').innerText= ' ' + cartData.length + ' Items';
-        document.getElementById('m-cart-plus').innerText= ' ' + cartData.length;
-
         if(cartData.length < 1 && flag){
             document.getElementById('food-items').classList.toggle('food-items');
             document.getElementById('category-list').classList.toggle('food-items');
@@ -635,9 +633,10 @@ function decrementItem(){
             document.getElementById('checkout').classList.toggle('cart-toggle');
             flag= false;
             alert("Currently no item in cart!");
+            console.log(flag)
         }
+    
     }
-
   totalAmount()
     cartItems()
 }
@@ -672,4 +671,46 @@ function totalAmount(){
     document.getElementById('total-item').innerText= 'Total Item : ' + cartData.length;
     document.getElementById('total-price').innerText= 'Total Price : $ ' + sum;
     document.getElementById('m-total-amount').innerText= 'Total Price : $ ' + sum;
+}
+
+function addEvents(){
+    document.querySelectorAll('.add-to-cart').forEach(item=>{
+        item.addEventListener('click',addToCart)
+    });
+    document.querySelectorAll('.increase-item').forEach(item=>{
+        item.addEventListener('click',incrementItem)
+    })
+    document.querySelectorAll('.decrease-item').forEach(item=>{
+        item.addEventListener('click',decrementItem)
+    })
+    document.querySelectorAll('.cart-btn').forEach(item=>{
+        item.addEventListener('click',()=>{
+            cartData=[]
+            alert("Order placed successfully")
+            window.location.reload()
+        })
+    })
+}
+
+window.onresize= window.onload= function(){
+    var size= window.screen.width;
+    if(size<800){
+        var cloneFoodItems= document.getElementById('food-items').cloneNode(true);
+        var cloneCartPage= document.getElementById('cart-page').cloneNode(true);
+        document.getElementById('food-items').remove();
+        document.getElementById('cart-page').remove();
+        document.getElementById('category-header').after(cloneFoodItems);
+        document.getElementById('food-items').after(cloneCartPage);
+        addEvents()
+    }
+    if(size>800){
+        var cloneFoodItems= document.getElementById('food-items').cloneNode(true);
+        document.getElementById('food-items').remove();
+        document.getElementById('header').after(cloneFoodItems);
+
+        var cloneCartPage= document.getElementById('cart-page').cloneNode(true);
+        document.getElementById('cart-page').remove();
+        document.getElementById('food-items').after(cloneCartPage);
+        addEvents()
+    }
 }
