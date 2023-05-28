@@ -1,6 +1,7 @@
+
+
 body{
     background-color: honeydew;
-    
 }
 header{
     font-weight: bolder;
@@ -10,7 +11,6 @@ header{
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.685);
 }
-
 footer{
     background-color: black;
     color: white;
@@ -30,28 +30,26 @@ footer{
     margin: 0%;
     background-color: rgb(0, 0, 0, 0.5);
 }
+.menu li{
+    padding: 10px;
+    display: inline-block;
+}
 .menu li a{
     color: white;
     font-size: 20px;
     text-decoration: none;
 }
-.menu li{
-    padding: 10px;
-    display: inline-block;
-}
 .menu li:hover{
-    background-color: rgba(0, 0, 0, 0.7);;
+    background-color: rgba(0, 0, 0, 0.7);
 }
-.menu li:nth-last-child(2), .menu li:nth-last-child(1){
-    float: right;
-    margin-right: 10px;
-}
+
 #worldnews, #IndiaNews, #RegionalNews, #Business, #Technology{
     margin: 10px;
     overflow-x: auto;
     white-space: nowrap;
     overflow-x: scroll;
 }
+
 .news{
     position: relative;
     border-radius: 10px;
@@ -61,11 +59,13 @@ footer{
     border: 2px solid green;
     display: inline-block;
 }
+
 .news img{
     border-radius: 10px;
     width: 300px;
     height: 200px;
 }
+
 .overlay {
     position: absolute;
     bottom: 0%;
@@ -80,6 +80,7 @@ footer{
     padding: 10px;
     text-align: center;
 }
+
 .news:hover .overlay{
     opacity: 1;
 }
@@ -91,6 +92,7 @@ footer{
     padding: 5px;
     margin: 5px;
 }
+
 #support a{
     border-radius: 5px;
     padding: 10px;
@@ -100,6 +102,7 @@ footer{
     text-decoration: none;
     background-color: gray;
 }
+
 #support a:hover{
     color: white;
     background-color: rgb(8, 8, 8);

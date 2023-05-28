@@ -101,7 +101,7 @@
             <h1>Complaint Form</h1>
             <p>Read below instructions before proceeding:<br> Make sure you fill all the fileds where * is provided</p>
         </header>
-        <form action="">
+        <form action="" method="post">
             <article>
                 <h3>Name</h3>
                 <input type="text" title="name" required spellcheck="true">
@@ -109,13 +109,12 @@
 
             <article>
                 <h3>Phone No</h3>
-                <input type="number" min="6000000000" max="9999999999" required>
-                <input type="tel" name="txtPhone" pattern="011-[0-9]{8}" placeholder="011-45767789">
+                <input type="tel" pattern="\d{10}" required>
             </article>
 
             <article>
                 <h3>Email Address</h3>
-                <input type="email" pattern="^[a-zA-Z0-9]+@gmail\.com$" required>
+                <input type="email" required>
             </article>
 
             <article>
@@ -130,9 +129,9 @@
                 <input type="text" required>
 
                 <h3>District</h3>
-                <select name="District" id="district" required>
+                <select name="District" id="district" required >
                     <option value="">Choose</option>
-                    <option value="BangaloreU">Bangalore Urban</option>
+                    <option value="Bang_urban">Bangalore Urban</option>
                     <option value="Bangalore Rural">Bangalore Rural</option>
                     <option value="Ramnagar">Ramnagar</option>
                 </select>
@@ -168,7 +167,7 @@
                 <textarea name="description" id="" cols="30" rows="10" required spellcheck="true"></textarea>
             </article>
 
-            <button>Reset</button> 
+            <button>Reset</button>
             <button>Submit</button>
         </form>
         <footer>
