@@ -1,90 +1,132 @@
-let input = document.getElementById("display");
+let display =document.getElementById("display");
 
-function addChar(character) {
-  if (input.innerText == null || input.innerText == "0")
-    input.innerText = character;
-  else input.innerText += character;
+function clearDisplay(){
+    display.innerHTML="";
+
 }
 
-function cos() {
-  if (input.innerText == "") alert("No value entered!!");
-  else input.innerText = Math.cos(input.innerText);
+function cos(){
+    if(display.innerText=="")
+        alert("Please Enter some value");
+    else    
+        display.innerText=Math.cos(display.innerText);    
 }
 
-function sin() {
-  if (input.innerText == "") alert("No value entered!!");
-  else input.innerText = Math.sin(input.innerText);
+function sin(){
+    if(display.innerText=="")
+        alert("Please Enter some value");
+    else    
+        display.innerText=Math.sin(display.innerText);    
 }
 
-function tan() {
-  if (input.innerText == "") alert("No value entered!!");
-  else input.innerText = Math.tan(input.innerText);
+function tan(){
+    if(display.innerText=="")
+        alert("Please Enter some value");
+    else    
+        display.innerText=Math.tan(display.innerText);    
 }
 
-function sqrt() {
-  if (input.innerText == "") alert("No value entered!!");
-  else input.innerText = Math.sqrt(input.innerText);
+function sqrt(){
+    if(display.innerText=="")
+        alert("Please Enter some value");
+    else    
+        display.innerText=Math.sqrt(display.innerText);    
 }
 
-function ln() {
-  if (input.innerText == "") alert("No value entered!!");
-  else input.innerText = Math.log(input.innerText);
+function ln(){
+    if(display.innerText=="")
+        alert("Please Enter some value");
+    else    
+        display.innerText=Math.log(display.innerText);  
+        
+        
 }
 
-function exp() {
-  if (input.innerText == "") alert("No value entered!!");
-  else input.innerText = Math.exp(input.innerText);
+function exp(){
+    if(display.innerText=="")
+        alert("Please Enter some value");
+    else    
+        display.innerText=Math.exp(display.innerText);    
 }
 
-function deleteChar() {
-  input.innerText = input.innerText.substring(0, input.innerText.length - 1);
+function square(){
+    if(display.innerText=="")
+    alert("Please Enter some value");
+else    
+    display.innerText=eval(display.innerText)* eval(display.innerText)
 }
 
-function changeSign() { 
-  if (input.innerText.substring(0, 1) == "-")
-    input.innerText = input.innerText.substring(1, input.innerText.length);
-  else input.innerText = "-" + input.innerText;
-}
-
-function compute() {
- 
-  if (input.innerText == "") alert("No value entered!!");
-  else {
-    try {
-      input.innerText = eval(input.innerText);
-    } catch {
-      input.innerText = "Error";
+function changeSign(){
+    if(display.innerText=="")
+        alert("Please enter some value");
+    else{
+        display.innerText= -1 * parseFloat(display.innerText);
     }
-  }
+
+/*
+    if(display.innerText.substring(0,1)=='-')
+        display.innerText=display.innerText.substring(1,display.innerText.length);
+    else
+        display.innerText="-"+display.innerText    
+
+*/
+
 }
 
-function square() {
-  if (input.innerText == "") alert("No value entered!!");
-  else input.innerText = eval(input.innerText) * eval(input.innerText);
+
+function addChar(character){
+    if(display.innerText==null ||display.innerText=="0")
+        display.innerText=character;
+        else  display.innerText+=character;
 }
 
-function clearDisplay() {
-  input.innerText = "";
+function deleteChar(){
+    display.innerText=display.innerText.substring(0,display.innerText.length-1)
 }
-function checkNum() {
-  var str = input.innerText;
-  for (var i = 0; i < str.length; i++) {
-    var ch = str.substring(i, i + 1);
-    if (ch < "0" || ch > "9") {
-      if (
-        ch != "/" ||
-        ch != "*" ||
-        ch != "+" ||
-        ch != "-" ||
-        ch != "." ||
-        ch != "(" ||
-        ch != ")"
-      ) {
-        alert("invalid entry!");
 
+function compute(){
+    if(display.innerText=="")
+            alert("Please eneter some values")
+    else{
+        try{
+            display.innerText=eval(display.innerText);
+        }
+        catch{
+            display.innerText="Error";
+        }
+    }    
+        
+
+}
+
+function checkNum(){
+
+    /*var data=parseFloat(display.innerText);
+    if(isNaN(data))
+        return true;
+    else{    
+        alert("Invalid Entry");
         return false;
-      }
+
+    }*/
+    
+
+    var data=display.innerText;
+    for(var i=0;i<data.length;i++){
+            var ch=data.charAt(i);
+            if(ch<'0' || ch>'9'){
+                  if(ch!='/' || ch!='*' || ch!='-' || ch!='.' || ch != '(' || ch!=')'){
+                    alert("invalid entry");
+                        return false;
+                  }
+                
+                    
+
+                }
+            }
+            return true;
     }
-  }
-  return true;
-}
+
+
+
+
